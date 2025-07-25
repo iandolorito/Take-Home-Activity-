@@ -3,7 +3,7 @@ function SFare(TotalFare, riders) {
     let farePerKm= TotalFare/ TotalDistance; 
 
 
-const FBreakdown= riders.map(rider => {
+let FBreakdown= riders.map(rider => {
     let amount = rider.distance * farePerKm; 
     return {
         name: rider.name,
