@@ -1,10 +1,10 @@
 function SFare(TotalFare, riders) {
-    const TotalDistance = riders.reduce((sum, rider) => sum + rider.distance, 0);
-    const farePerKm= TotalFare/ TotalDistance; 
+    let TotalDistance = riders.reduce((sum, rider) => sum + rider.distance, 0);
+    let farePerKm= TotalFare/ TotalDistance; 
 
 
 const FBreakdown= riders.map(rider => {
-    const amount = rider.distance * farePerKm; 
+    let amount = rider.distance * farePerKm; 
     return {
         name: rider.name,
         distance: rider.distance,
@@ -16,8 +16,8 @@ const FBreakdown= riders.map(rider => {
 return FBreakdown; 
 }
 
-const TotalFare = 1000;
-const riders = [
+let TotalFare = 1000;
+let riders = [
     {name: "Jayep", distance: 20},
     {name: "Ian", distance: 40},
     {name: "Kem", distance: 55},
@@ -25,7 +25,7 @@ const riders = [
 
 ];
 
-const result = SFare(TotalFare, riders);
+let result = SFare(TotalFare, riders);
 
 console.log(`Total Fare: ${TotalFare}`);
 console.log(`Fare per km: ${(TotalFare/ riders.reduce((sum, r) => sum + r.distance, 0)).toFixed(2)} \n`);
